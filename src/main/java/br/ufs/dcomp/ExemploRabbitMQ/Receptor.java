@@ -10,13 +10,13 @@ public class Receptor {
 
   public static void main(String[] argv) throws Exception {
     ConnectionFactory factory = new ConnectionFactory();
-    factory.setUri("amqp://...");
+    factory.setUri("amqp://yyxmlsdn:PhLoegIcxcI_sDnlf3ZBVBNa33vrGEJ_@zebra.rmq.cloudamqp.com/yyxmlsdn");
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
 
                       //(queue-name, durable, exclusive, auto-delete, params); 
     channel.queueDeclare(QUEUE_NAME, false,   false,     false,       null);
-    
+   
     System.out.println(" [*] Esperando recebimento de mensagens...");
 
     Consumer consumer = new DefaultConsumer(channel) {
